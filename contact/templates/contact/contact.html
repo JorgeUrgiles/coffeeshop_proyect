@@ -55,7 +55,7 @@
                       <form action="" method="POST">
                        {% csrf_token %}
                         <div class="form-group">
-                            <label>Nombre *</label>
+                            <label>Name *</label>
                             <div class="input-group">
                            {{contactForm.name}}       
                             </div>
@@ -70,29 +70,29 @@
                            
                         </div>
                         <div class="form-group">
-                            <label>Asunto *</label>
+                            <label>Subject *</label>
                             <div class="input-group">
                               {{contactForm.subject}}
                             </div>
                             {{contactForm.subject.errors}}
                         </div>
                         <div class="form-group">
-                            <label>Mensaje *</label>
+                            <label>Message *</label>
                             <div class="input-group">
                               {{contactForm.message}}
                             </div>
                             {{contactForm.message.errors}}
                         </div>
                         <div class="text-center">
-                            <input type="submit" class="btn btn-primary btn-block py-2" value="Enviar">
+                            <input type="submit" class="btn btn-primary btn-block py-2" value="Send">
                         </div>
                         {% if 'ok' in request.GET %}
                         <script>
-                    alert("Mensaje enviado");
+                    alert("Message sent");
                 </script>
                         {%elif 'fail' in request.GET%}
                         <script>
-                    alert("error al enviar el mensaje, intentelo mas tarde");
+                    alert("Error sending the message, please try again later.");
                 </script>
                         {%endif%}
                     </form>
