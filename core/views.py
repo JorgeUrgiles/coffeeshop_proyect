@@ -10,8 +10,7 @@ def home(request):
 def about(request):
     return render(request, "core/about.html")
 
-def reservation(request):
-    return render(request, "core/reservation.html")
+
 
 
 
