@@ -1,0 +1,76 @@
+{% extends 'core/base.html' %}
+{% block title %}Testimonial{% endblock %}
+{% block content %}
+{% load static %}
+
+ <!-- Page Header Start -->
+ 
+ <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
+    <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px">
+        <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">Testimonial</h1>
+        <div class="d-inline-flex mb-lg-5">
+            <p class="m-0 text-white"><a class="text-white" href="">Home</a></p>
+            <p class="m-0 text-white px-2">/</p>
+            <p class="m-0 text-white">Testimonial</p>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+<div class="">
+    <div class="">
+        <div class="section-title">
+            <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Testimonial</h4>
+            <h1 class="display-4">Our Clients Say</h1>
+        </div>
+
+
+<body>
+
+    <div class="contenedor">
+      
+    {% for testimonial in listTestimonials %} 
+        <div class="tarjeta">
+            <img class="imagen" src="{{testimonial.image.url}}" alt="Imagen del cliente">
+            <h2 class="titulo">{{testimonial.name}}</h2>
+            <p class="descripcion">{{testimonial.comment}}</p>
+        </div>
+     {% endfor %}
+    </div>  
+   
+    <style>
+        .contenedor {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: 70px;
+            margin-right: 70px
+        }
+
+        .tarjeta {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            width: calc(33.33% - 200px); /* Ajusta el ancho de cada tarjeta según tus necesidades */
+            margin: 10px; /* Espacio entre tarjetas */
+            box-sizing: border-box;
+        }
+
+        .imagen {
+            width: 100%;
+            height: auto;
+        }
+
+        .titulo {
+            font-size: 18px;
+            margin-top: 10px; /* Espacio entre la imagen y el título */
+        }
+
+        .descripcion {
+            font-size: 14px;
+            margin-top: 5px; /* Espacio entre el título y la descripción */
+        }
+    </style>
+
+
+
+{% endblock  %}
